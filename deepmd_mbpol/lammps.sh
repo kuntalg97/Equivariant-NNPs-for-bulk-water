@@ -2,18 +2,16 @@
 
 #SBATCH --job-name=wat_AANN
 #SBATCH --output=us-%j.out
-#SBATCH --account=pi-gavoth
-#SBATCH --partition=gavoth
+# >>> Insert SLURM details here (e.g. #SBATCH --account=..., #SBATCH --partition=..., #SBATCH --time=...)
 #SBATCH --nodes=1
 #SBATCH --ntasks-per-node=48
 
-module load python
-module load intelmpi
+# >>> Insert module loads for your cluster here (e.g. Python, MPI)
 ulimit -l unlimited
 conda deactivate
-conda activate /project2/gavoth/kuntalg/Softwares/DeePMD/deepmd_plumed
+conda activate <PATH_TO_DEEPMD_CONDA_ENV>
 
-PLUMED_KERNEL=/project2/gavoth/kuntalg/Softwares/PLUMED/plumed-2.4.0/opt/lib/libplumedKernel.so
+PLUMED_KERNEL=<PATH_TO_PLUMED_INSTALL>/lib/libplumedKernel.so
 
 cores=48
 

@@ -13,7 +13,7 @@ newton        on
 read_data "data.water_AA_dp"
 pair_style mace no_domain_decomposition
 
-pair_coeff * * /project2/gavoth/kuntalg/Softwares/MACE/mace_matpes_r2scan_0/MACE-matpes-r2scan-omat-ft.model-lammps.pt H O
+pair_coeff * * <PATH_TO_MACE_MODEL_DIR>/MACE-matpes-r2scan-omat-ft.model-lammps.pt H O
 
 velocity all create ${TEMP} 61231 mom yes dist gaussian 
 
